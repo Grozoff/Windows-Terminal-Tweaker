@@ -1,17 +1,14 @@
 Import-Module posh-git
 Import-Module oh-my-posh
 Import-Module -Name Terminal-Icons
+Import-Module PSReadLine
 Set-PoshPrompt -Theme gsv
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
-Set-PSReadLineOption -EditMode Emacs
 
-if ($host.Name -eq 'ConsoleHost') {
-    Import-Module PSReadLine
-}
 # dotnet suggest shell start
 if (Get-Command "dotnet-suggest" -errorAction SilentlyContinue) {
     $availableToComplete = (dotnet-suggest list) | Out-String
