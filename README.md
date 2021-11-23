@@ -1,4 +1,4 @@
-# My setup from Windows Terminal
+# Let's get started!
 
 - Get Windows Terminal, get PowerShell (not a windows PowerShell) and set it as default:
   - Get Windows Terminal free [from the store](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) or [GitHub releases page](https://github.com/microsoft/terminal/releases)
@@ -15,4 +15,21 @@
   - Edit $PROFILE ```notepad $PROFILE``` and add the following lines ```Import-Module posh-git``` ```Import-Module oh-my-posh``` and for the changes to take effect, restart the shell.
   - Run the command ```Get-PoshThemes``` and you should see a [list of all available themes](https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/themes). Select the one you like and add the following line to $PROFILE ```Set-PoshPrompt -Theme name``` instead of `name`, enter the name of the topic you like, for example: ```Set-PoshPrompt -Theme ys``` after saving the $PROFILE, don't forget to restart the shell!
 - Installing additional features:
-  - 
+  -  Installing color [icons](https://github.com/devblackops/Terminal-Icons) in the directory and files listing!
+     - Run the command ```Install-Module -Name Terminal-Icons -Repository PSGallery``` And then add one line to my $PROFILE ```Import-Module -Name Terminal-Icons```. Now if you run the command ```ls``` you will see this ![](https://i.imgur.com/e4sj4Nm.jpeg)
+  - [PSReadLine](https://docs.microsoft.com/en-us/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2) provides an improved command-line editing experience in the PowerShell console:
+    - Run ```Install-Module PSReadLine -AllowPrerelease -Force``` and add the following line to $PROFILE ```Import-Module PSReadLine```
+    - Enable Predictive IntelliSense
+      ```
+      Set-PSReadLineOption -PredictionSource History
+      Set-PSReadLineOption -PredictionViewStyle ListView
+      Set-PSReadLineOption -EditMode Windows
+      ```
+      After saving $PROFILE and restarting the shell, you will have an ANSI-style list with a prediction of what you want to see next and a history of what you have already used.
+      ![](https://i.imgur.com/rTPBe89.jpeg)
+    - For easy navigation through the list that we have set above, it is necessary to add the following lines to the $PROFILE 
+      ```
+      Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+      Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+      ```
+      Use the up and down arrows to navigate through the sheet
