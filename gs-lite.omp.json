@@ -19,11 +19,11 @@
         {
           "type": "root",
           "style": "powerline",
-          "powerline_symbol": " ",
           "foreground": "#f1184c",
           "background": "#242424",
           "properties": {
-            "postfix": ""
+            "postfix": "",
+            "root_icon": "!"
           }
         },
         {
