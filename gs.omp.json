@@ -56,22 +56,21 @@
                     "background": "#242424",
                     "properties": {
                         "display_status": true,
-                        "postfix": "",
+                        "postfix": " ",
                         "prefix": ""
                     }
                 },
                 {
                     "type": "executiontime",
                     "style": "powerline",
-                    "powerline_symbol": "\uE0B0",
-                    "foreground": "#33DD2D",
+                    "foreground": "#ffffff",
                     "background": "#242424",
                     "properties": {
                         "threshold": 500,
                         "style": "austin",
                         "always_enabled": true,
-                        "prefix": "",
-                        "postfix": ""
+                        "postfix": "",
+                        "prefix": ""
                     }
                 },
                 {
@@ -85,7 +84,8 @@
                         "always_enabled": true,
                         "color_background": true,
                         "error_color": "#f1184c",
-                        "prefix": ""
+                        "prefix": "",
+                        "postfix": ""
                     }
                 }
             ]
