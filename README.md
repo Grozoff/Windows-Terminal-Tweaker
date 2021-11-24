@@ -33,3 +33,15 @@
       Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
       ```
       Use the up and down arrows to navigate through the sheet
+-------
+
+# Preview my themes
+
+### 1. gsv 
+  ![](https://i.imgur.com/fZRUhGZ.jpeg)   
+### 2. gs
+  ![](https://i.imgur.com/ydMb38X.jpeg)   
+### 3. gs-lite 
+  ![](https://i.imgur.com/4moIPn2.jpeg)    
+  P.S. I use it in a terminal that is running in vscode, because some characters are displayed incorrectly there.
+  Proof ![](https://i.imgur.com/zKeNl7r.jpeg)
