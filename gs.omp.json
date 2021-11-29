@@ -23,7 +23,8 @@
                     "foreground": "#f1184c",
                     "background": "#242424",
                     "properties": {
-                        "postfix": ""
+                        "postfix": "",
+                        "prefix": ""
                     }
                 },
                 {

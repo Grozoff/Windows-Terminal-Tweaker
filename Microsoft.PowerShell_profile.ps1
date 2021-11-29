@@ -3,16 +3,16 @@ Import-Module oh-my-posh
 Import-Module -Name Terminal-Icons
 Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource History
-Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineOption -EditMode Windows
 
-if ($env:TERM_PROGRAM -eq 'vscode') {
+if ($env:TERM_PROGRAM -eq 'vscode' && $env:VisualStudioEdition -contains 'VisualStudioEdition') {
     Set-PoshPrompt -Theme gs-lite
 }
 else {
     Set-PoshPrompt -Theme gs
+    Set-PSReadLineOption -PredictionViewStyle ListView
 }
 
 # dotnet suggest shell start
