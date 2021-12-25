@@ -7,7 +7,10 @@ Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineOption -EditMode Windows
 
-if ($env:TERM_PROGRAM -eq 'vscode' && $env:VisualStudioEdition -contains 'VisualStudioEdition') {
+if ($env:TERM_PROGRAM -eq 'vscode') {
+    Set-PoshPrompt -Theme gs-lite
+}
+elseif ($env:VSAPPIDNAME -eq 'devenv.exe') {
     Set-PoshPrompt -Theme gs-lite
 }
 else {
