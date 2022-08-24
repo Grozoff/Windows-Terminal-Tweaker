@@ -11,9 +11,9 @@
   - Unpack and install them in the standard way (right click on the font -> install)
   - Change font in PowerShell profile to CascaydiaCove NF: Terminal -> Settings -> Profiles -> PowerShell -> Appearance -> Font face   
 ![](https://i.imgur.com/xIpf83v.jpeg)
-- Install and use [Oh My Posh](https://ohmyposh.dev/docs/) (A prompt theme engine for any shell):
-  - Install "Oh My Posh" with command ```winget install JanDeDobbeleer.OhMyPosh``` and restart shell (terminal) to reload PATH
-  - Install "[Posh git](https://github.com/dahlbyk/posh-git)" with command ```PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force```
+- Install and use "Oh My Posh" (A prompt theme engine for any shell):
+  - Install [Oh My Posh](https://ohmyposh.dev/docs/) with command ```winget install JanDeDobbeleer.OhMyPosh -s winget``` and restart shell (terminal) to reload PATH
+  - Install [Posh git](https://github.com/dahlbyk/posh-git) with command ```PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force```
   - Edit `$PROFILE` and add the following line ```Import-Module posh-git``` and for the changes to take effect, restart the shell.
   - Run the command ```Get-PoshThemes``` and you should see a [list of all available themes](https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/themes). Select the one you like and add the following line to `$PROFILE` ```oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\themename.omp.json" | Invoke-Expression``` instead of `themename`, enter the name of the topic you like. After saving the $PROFILE, don't forget to restart the shell!
 - Installing additional features:
