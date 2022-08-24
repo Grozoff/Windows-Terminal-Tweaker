@@ -13,8 +13,9 @@
 ![](https://i.imgur.com/xIpf83v.jpeg)
 - Install and use [Oh My Posh](https://ohmyposh.dev/docs/) (A prompt theme engine for any shell):
   - Install "Oh My Posh" with command ```winget install JanDeDobbeleer.OhMyPosh``` and restart shell (terminal) to reload PATH
-  - Edit $PROFILE ```notepad $PROFILE``` and add the following lines ```Import-Module posh-git``` ```Import-Module oh-my-posh``` and for the changes to take effect, restart the shell.
-  - Run the command ```Get-PoshThemes``` and you should see a [list of all available themes](https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/themes). Select the one you like and add the following line to $PROFILE ```Set-PoshPrompt -Theme name``` instead of `name`, enter the name of the topic you like, for example: ```Set-PoshPrompt -Theme ys``` after saving the $PROFILE, don't forget to restart the shell!
+  - Install "[Posh git](https://github.com/dahlbyk/posh-git)" with command ```PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force```
+  - Edit `$PROFILE` and add the following line ```Import-Module posh-git``` and for the changes to take effect, restart the shell.
+  - Run the command ```Get-PoshThemes``` and you should see a [list of all available themes](https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/themes). Select the one you like and add the following line to `$PROFILE` ```oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\themename.omp.json" | Invoke-Expression``` instead of `themename`, enter the name of the topic you like. After saving the $PROFILE, don't forget to restart the shell!
 - Installing additional features:
   -  Installing color [icons](https://github.com/devblackops/Terminal-Icons) in the directory and files listing!
      - Run the command ```Install-Module -Name Terminal-Icons -Repository PSGallery``` And then add one line to my $PROFILE ```Import-Module -Name Terminal-Icons```. Now if you run the command ```ls``` you will see this    

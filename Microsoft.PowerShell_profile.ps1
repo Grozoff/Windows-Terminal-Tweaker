@@ -1,5 +1,4 @@
 Import-Module posh-git
-Import-Module oh-my-posh
 Import-Module -Name Terminal-Icons
 Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource History
@@ -8,10 +7,10 @@ Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineOption -EditMode Windows
 
 if ($env:VSAPPIDNAME -eq 'devenv.exe') {
-    Set-PoshPrompt -Theme gs-lite
+    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\gs-lite.omp.json" | Invoke-Expression
 }
 else {
-    Set-PoshPrompt -Theme gs
+    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\gs.omp.json" | Invoke-Expression
     Set-PSReadLineOption -PredictionViewStyle ListView
 }
 
