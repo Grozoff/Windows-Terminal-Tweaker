@@ -1,0 +1,39 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$jobs\
+$line_break\
+$time $cmd_duration\
+$character\
+"""
+
+[time]
+disabled = false
+format = '[\[$time\]]($style)'
+time_format = '%T'
+
+[directory]
+use_logical_path = true
+truncate_to_repo = false
+truncation_length = 8
+truncation_symbol = '…/'
+home_symbol = '.'
+
+[git_status]
+ahead = '⇡($count)'
+diverged = '⇕⇡($ahead_count)⇣($behind_count)'
+behind = '⇣($count)'
+untracked = '?($count)'
+modified = '!($count)'
+deleted = '✘($count)'
+stashed = ''
+
+[cmd_duration]
+show_milliseconds = true
+min_time = 0
+format = '[\[$duration\]](bold white)'

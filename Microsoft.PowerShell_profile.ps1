@@ -1,18 +1,13 @@
-Import-Module posh-git
 Import-Module -Name Terminal-Icons
 Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineOption -EditMode Windows
+Set-PSReadLineOption -PredictionViewStyle ListView
+Invoke-Expression (&starship init powershell)
 
-if ($env:VSAPPIDNAME -eq 'devenv.exe') {
-    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\gs-lite.omp.json" | Invoke-Expression
-}
-else {
-    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\gs.omp.json" | Invoke-Expression
-    Set-PSReadLineOption -PredictionViewStyle ListView
-}
+$ENV:STARSHIP_CONFIG = "$HOME\example\non\default\path\starship.toml"
 
 # dotnet suggest shell start
 if (Get-Command "dotnet-suggest" -errorAction SilentlyContinue) {
@@ -35,4 +30,3 @@ else {
 }
 
 $env:DOTNET_SUGGEST_SCRIPT_VERSION = "1.0.2"
-# dotnet suggest script end
