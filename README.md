@@ -51,5 +51,5 @@
    ![](https://i.imgur.com/7i1xczW.png)
 - administrator  
    ![](https://i.imgur.com/bETIHzb.png)
-- python info
+- python info  
    ![](https://i.imgur.com/btyq3hB.png)
